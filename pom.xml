@@ -11,7 +11,7 @@
     <groupId>com.example</groupId>
     <artifactId>internet_shop</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>internet_shop</name>
+    <name>com.example.internet_shop</name>
     <description>Internet shop</description>
     <properties>
         <java.version>17</java.version>
