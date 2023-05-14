@@ -41,20 +41,8 @@ public class User implements UserDetails {
         products.add(product);
     }
 
-    public Image getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(Image avatar) {
-        this.avatar = avatar;
-    }
-
     public List<Product> getProducts() {
         return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
     }
 
     public Long getId() {
@@ -77,10 +65,6 @@ public class User implements UserDetails {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
     public String getName() {
         return name;
     }
@@ -89,20 +73,8 @@ public class User implements UserDetails {
         this.name = name;
     }
 
-    public boolean isActive() {
-        return active;
-    }
-
     public void setActive(boolean active) {
         this.active = active;
-    }
-
-    public String getActivationCode() {
-        return activationCode;
-    }
-
-    public void setActivationCode(String activationCode) {
-        this.activationCode = activationCode;
     }
 
     public void setPassword(String password) {
@@ -113,12 +85,6 @@ public class User implements UserDetails {
         return roles;
     }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
-    }
-
-
-    // security config
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

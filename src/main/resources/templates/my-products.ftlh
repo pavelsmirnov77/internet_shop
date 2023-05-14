@@ -32,7 +32,6 @@
                     <option value="Москва">Москва</option>
                     <option value="Санкт-Петербург">Санкт-Петербург</option>
                     <option value="Воронеж">Воронеж</option>
-
                 </select>
             </div>
             <div class="form-group">
