@@ -19,17 +19,24 @@
                 <span class="navbar-brand mb-0 h1">Интернет магазин</span>
             </a>
             <#if user.email??>
-                <div class="dropdown text-end">
+                <div class="profile-name">
+                    ${user.name}
                     <a href="/profile">
                         <img src="/static/images/avatar.png" alt="mdo"
                              width="32" height="32" class="rounded-circle">
                     </a>
                 </div>
             <#else>
-                <button class="btn btn-light my-2 my-sm-0" type="button"
-                        onclick="window.location.href = '/login'">
-                    Войти
-                </button>
+                <div class="btn-group">
+                    <button class="btn btn-light my-2 my-sm-0" type="button"
+                            onclick="window.location.href = '/login'">
+                        Войти
+                    </button>
+                    <button class="btn btn-light my-2 my-sm-0" type="button"
+                            onclick="window.location.href = '/registration'">
+                        Регистрация
+                    </button>
+                </div>
             </#if>
         </div>
     </nav>

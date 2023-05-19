@@ -23,6 +23,12 @@
     margin-bottom: 10px;
 }
 
+.profile-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
 /* Стиль для текста карточки товара */
 .card-text {
     font-size: 16px;
