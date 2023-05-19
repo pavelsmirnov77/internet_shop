@@ -29,8 +29,19 @@
     margin-bottom: 10px;
 }
 
-/* Стиль для подвала карточки товара */
+/* Стиль для нижней части карточки товара */
 .card-footer {
     font-size: 14px;
     color: #888;
+}
+/* Стили для подсказки в текстовом поле */
+.input-field::placeholder {
+    color: #999;
+}
+
+/* Стили для фокуса на текстовом поле */
+.input-field:focus {
+    outline: none;
+    border-color: #5b9dd9;
+    box-shadow: 0 0 5px #5b9dd9;
 }

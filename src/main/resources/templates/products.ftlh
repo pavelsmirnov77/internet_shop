@@ -1,6 +1,6 @@
 <#import "blocks/template.ftlh" as t>
 <@t.template user>
-    <h1 style="text-align: center">Поиск товаров</h1><hr>
+    <h1 style="text-align: center">Объявления</h1><hr>
     <form method="get" action="/">
         <div class="form-row">
             <div class="form-group col-md-2">
@@ -36,9 +36,13 @@
                     </div>
                     <div class="card-footer">
                         Город: ${product.city}
-                    </div>
-                    <div class="card-footer">
-                        Автор: ${product.user.name}
+                        <div>
+                            Автор: ${product.user.name}
+                        </div>
+                        <div>
+                            Дата объявления: ${product.dateOfCreated.getDayOfMonth()}.${product.dateOfCreated.getMonthValue()}.${product.dateOfCreated.year - 2000}
+                            ${product.dateOfCreated.hour}:${product.dateOfCreated.minute}
+                        </div>
                     </div>
                 </div>
             </a>
