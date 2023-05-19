@@ -1,0 +1,36 @@
+.product:hover {
+    transition: 0.5s;
+    transform: scale(1.02);
+}
+
+/* Стиль для ссылок на товары */
+.product-link {
+    color: #000 !important;
+    text-decoration: none;
+}
+
+/* Стиль для изображений товаров */
+.card-img-top {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Стиль для заголовка карточки товара */
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Стиль для текста карточки товара */
+.card-text {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Стиль для подвала карточки товара */
+.card-footer {
+    font-size: 14px;
+    color: #888;
+}

@@ -1,6 +1,5 @@
 package com.example.internet_shop.models;
 
-import com.example.internet_shop.models.enums.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -22,24 +21,13 @@ public class User implements UserDetails {
     @JoinColumn
     private Image avatar;
     private boolean active;
-    private String activationCode;
     @Column(length = 1000)
     private String password;
-
-    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
-    @CollectionTable(name = "user_role",
-            joinColumns = @JoinColumn(name = "user_id"))
-    @Enumerated(EnumType.STRING)
-    private Set<Role> roles = new HashSet<>();
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER,
             mappedBy = "user")
     private List<Product> products = new ArrayList<>();
 
-    public void addProductToUser(Product product) {
-        product.setUser(this);
-        products.add(product);
-    }
 
     public List<Product> getProducts() {
         return products;
@@ -81,14 +69,9 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
-    }
-
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return roles;
+        return Collections.emptyList();
     }
 
     @Override

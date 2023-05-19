@@ -21,7 +21,7 @@ public class ProductService {
     private final UserRepository userRepository;
     public List<Product> listProducts(String title) {
         if (title != null) {
-            productRepository.findByTitle(title);
+            return productRepository.findByTitle(title);
         }
         return productRepository.findAll();
     }
@@ -64,19 +64,8 @@ public class ProductService {
         return image;
     }
 
-    public void deleteProduct(User user, Long id) {
-        Product product = productRepository.findById(id)
-                                           .orElse(null);
-        if (product != null) {
-            if (product.getUser().getId().equals(user.getId())) {
-                productRepository.delete(product);
-                log.info("Product with id = {} was deleted", id);
-            } else {
-                log.error("User: {} haven't this product with id = {}", user.getEmail(), id);
-            }
-        } else {
-            log.error("Product with id = {} is not found", id);
-        }
+    public void deleteProduct(Long id) {
+        productRepository.deleteById(id);
     }
 
     public Product getProductById(Long id) {

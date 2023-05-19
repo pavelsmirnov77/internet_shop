@@ -1,7 +1,6 @@
 package com.example.internet_shop.services;
 
 import com.example.internet_shop.models.User;
-import com.example.internet_shop.models.enums.Role;
 import com.example.internet_shop.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +20,6 @@ public class UserService {
         if (userRepository.findByEmail(email) != null) return false;
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setActive(true);
-        user.getRoles().add(Role.ROLE_USER);
         log.info("Saving new User with email: {}", email);
         userRepository.save(user);
         return true;

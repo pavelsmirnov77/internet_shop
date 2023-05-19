@@ -3,6 +3,9 @@ package com.example.internet_shop.controllers;
 import com.example.internet_shop.models.User;
 import com.example.internet_shop.services.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,7 +38,6 @@ public class UserController {
         model.addAttribute("user", userService.getUserByPrincipal(principal));
         return "registration";
     }
-
 
     @PostMapping("/registration")
     public String createUser(User user, Model model) {

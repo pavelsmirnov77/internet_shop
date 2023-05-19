@@ -35,7 +35,10 @@
                         <p class="card-text">${product.price} ₽</p>
                     </div>
                     <div class="card-footer">
-                        ${product.city}
+                        Город: ${product.city}
+                    </div>
+                    <div class="card-footer">
+                        Автор: ${product.user.name}
                     </div>
                 </div>
             </a>
