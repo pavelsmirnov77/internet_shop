@@ -28,8 +28,9 @@ public class Product {
     private LocalDateTime dateOfCreated;
 
     @PrePersist
-    private void onCreate() { dateOfCreated = LocalDateTime.now(); }
-
+    private void onCreate() {
+        dateOfCreated = LocalDateTime.now();
+    }
 
     public void addImageToProduct(Image image) {
         image.setProduct(this);

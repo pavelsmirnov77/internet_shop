@@ -23,6 +23,7 @@
     margin-bottom: 10px;
 }
 
+/* Стиль для имени профиля на панели */
 .profile-name {
     font-size: 16px;
     font-weight: bold;
@@ -40,6 +41,7 @@
     font-size: 14px;
     color: #888;
 }
+
 /* Стили для подсказки в текстовом поле */
 .input-field::placeholder {
     color: #999;
@@ -50,4 +52,25 @@
     outline: none;
     border-color: #5b9dd9;
     box-shadow: 0 0 5px #5b9dd9;
+}
+
+.card-deck {
+    column-count: 4;
+}
+
+@media (max-width: 970px) {
+    .card-columns {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 700px) {
+    .card-columns {
+        column-count: 1;
+    }
+}
+
+.card {
+    height: 430px;
+    width: 290px;
 }

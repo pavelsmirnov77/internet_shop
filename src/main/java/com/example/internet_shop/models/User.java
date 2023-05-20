@@ -12,14 +12,13 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(unique = true, updatable = false)
+    @Column(unique = true, updatable = false, nullable = false)
     private String email;
+    @Column(name = "phone_number", nullable = false)
     private String phoneNumber;
+    @Column(name = "name", nullable = false)
     private String name;
-
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn
-    private Image avatar;
+    @Column
     private boolean active;
     @Column(length = 1000)
     private String password;
@@ -51,6 +50,10 @@ public class User implements UserDetails {
 
     public String getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getName() {

@@ -15,7 +15,7 @@
     <hr>
     <h1 style="text-align: center">Товары пользователя ${user.name}</h1>
     <br>
-    <div class="card-columns">
+    <div class="card-deck">
         <#list products as product>
             <a href="/product/${product.id}" class="product-link">
                 <div class="card text-white bg-dark my-3 product">

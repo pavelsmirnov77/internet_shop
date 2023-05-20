@@ -21,7 +21,7 @@ public class ProductService {
     private final UserRepository userRepository;
     public List<Product> listProducts(String title) {
         if (title != null) {
-            return productRepository.findByTitle(title);
+            return productRepository.findByTitleContains(title);
         }
         return productRepository.findAll();
     }

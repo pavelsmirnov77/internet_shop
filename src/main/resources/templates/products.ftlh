@@ -3,27 +3,16 @@
     <h1 style="text-align: center">Объявления</h1><hr>
     <form method="get" action="/">
         <div class="form-row">
-            <div class="form-group col-md-2">
-                <label for="searchCity">Город</label>
-                <select id="searchCity" class="form-control">
-                    <option value="">Город не выбран</option>
-                    <option value="Вологда">Вологда</option>
-                    <option value="Череповец">Череповец</option>
-                    <option value="Москва">Москва</option>
-                    <option value="Санкт-Петербург">Санкт-Петербург</option>
-                    <option value="Воронеж">Воронеж</option>
-                </select>
-            </div>
             <div class="form-group col-md-10">
                 <label for="searchWord">Поиск по объявлениям</label>
                 <input type="text" name="searchWord" <#if searchWord??>value="${searchWord}"</#if> class="form-control"
                        id="searchWord">
             </div>
-            <button style="width: 100%" type="submit" class="btn btn-dark">Поиск</button>
+            <button style="width: 83%" type="submit" class="btn btn-dark">Поиск</button>
         </div>
     </form>
     <hr>
-    <div class="card-columns">
+    <div class="card-deck">
         <#list products as product>
             <a href="/product/${product.id}" class="product-link">
                 <div class="card text-white bg-dark my-3 product">
@@ -41,13 +30,13 @@
                         </div>
                         <div>
                             Дата объявления: ${product.dateOfCreated.getDayOfMonth()}.${product.dateOfCreated.getMonthValue()}.${product.dateOfCreated.year - 2000}
-                            ${product.dateOfCreated.hour}:${product.dateOfCreated.minute}
+                            ${product.dateOfCreated.getHour()}:${product.dateOfCreated.getMinute()}
                         </div>
                     </div>
                 </div>
             </a>
         <#else>
-            <h1 style="text-align: center">Не найдено</h1>
+            <h1 style="text-align: center; white-space: nowrap;">Ничего не найдено :(</h1>
         </#list>
     </div>
 </@t.template>

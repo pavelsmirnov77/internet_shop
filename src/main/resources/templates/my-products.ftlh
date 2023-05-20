@@ -61,7 +61,7 @@
             <button type="submit" style="width: 100%" class="btn btn-dark">Добавить</button>
         </form>
     </div>
-    <div class="card-columns">
+    <div class="card-deck">
         <#list products as product>
             <a href="/product/${product.id}" class="product-link">
                 <div class="card text-white bg-dark my-3 product">
@@ -85,7 +85,7 @@
                 </div>
             </a>
         <#else>
-            <h1 style="text-align: center">Не найдено</h1>
+            <h1 style="text-align: center; white-space: nowrap;">Ничего не найдено :(</h1>
         </#list>
     </div>
 </@t.template>
