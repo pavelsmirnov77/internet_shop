@@ -29,7 +29,7 @@
                 </div>
             </a>
         <#else>
-            <h1 style="text-align: center">Не найдено</h1>
+            <h1 style="text-align: center">Ничего не найдено :(</h1>
         </#list>
     </div>
 </@t.template>

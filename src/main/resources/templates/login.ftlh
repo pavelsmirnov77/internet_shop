@@ -12,8 +12,13 @@
             <input type="password" class="form-control" id="password" name="password">
         </div>
         <input type="hidden" name="_csrf" value="${_csrf.token}">
-        <button type="submit" style="width: 100%" class="btn btn-dark">Войти</button>
+        <button type="submit" style="width: 100%" class="btn btn-dark">
+            Войти
+        </button>
     </form>
     <hr>
+    <#if error??>
+        <h2 style="color: red">${error}</h2>
+    </#if>
     <h2>Нет аккаунта? <a href="/registration">Зарегистрируйся!</a></h2>
 </@t.template>
