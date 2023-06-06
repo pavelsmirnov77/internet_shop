@@ -23,6 +23,6 @@
         <button type="submit" style="width: 100%" class="btn btn-dark">Зарегистрироваться</button>
     </form>
     <#if errorMessage??>
-        <h2 style="color: red">${errorMessage}</h2>
+        <h2 style="color: red; font-size: 16px;">${errorMessage}</h2>
     </#if>
 </@t.template>

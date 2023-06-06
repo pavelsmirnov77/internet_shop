@@ -46,7 +46,10 @@ public class UserController {
     @PostMapping("/registration")
     public String createUser(User user, Model model) {
         if (!userService.createUser(user)) {
-            model.addAttribute("errorMessage", "Некорректно введены почта или номер телефона/пользователь с такой электронной почтой уже существует");
+            model.addAttribute("errorMessage", "Регистрация невозможна по нескольким причинам: \n" +
+                                           " 1) Некорректно введена почта; \n" +
+                                           " 2) Некорректно введен номер телефона; \n" +
+                                           " 3) Пароль должен содержать от 8 символов и включать в себя заглавные и строчные буквы, а также символы цифры и знак подчеркивания");
             return "registration";
         }
         return "redirect:/login";
